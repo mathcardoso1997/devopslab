@@ -1,3 +1,3 @@
 # Laboratório DevOps
 
-Repositorio Laboratorial da Aula DevOps Tools (Pós Graduação)
+Aplicação Simples em Python/Flask com teste usando Unittest integrado ao Travis-CI fazendpo deploy no Heroku para disciplina de DevOps Tools da Pós da Mackenzie
