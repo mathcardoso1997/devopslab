@@ -19,6 +19,11 @@ deploy:
   api_key: $HEROKU_API_KEY
   edge: true 
   app: devopslab-matheus
+  strategy: api
   on:
       branch: main
+
+# Configurações Informacionais
+dist: xenial
+os: linux
 
