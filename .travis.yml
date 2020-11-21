@@ -8,7 +8,7 @@ python:
 # Instalação de Módulos que são necessários para a Aplicação.                                                                                                                                            
 install:                                                                                                                                                                                                 
   - pip install flask flask-wtf
-# SONAR
+
 addons: 
   sonarcloud: 
       organization: mathcardoso1997 
