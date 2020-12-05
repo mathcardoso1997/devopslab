@@ -38,5 +38,5 @@ jobs:
         api_key: $HEROKU_API_KEY
         edge: true
         app: devopslab-matheus
-          on:
-            branch: main
+        on:
+          branch: main
