@@ -40,3 +40,8 @@ jobs:
         app: devopslab-matheus
         on:
           branch: main
+
+notifications:
+    slack: matheuscardoso:G56O2J7QMDApmFsHTyQcvyb7
+    on_success: always
+    on_failure: always
