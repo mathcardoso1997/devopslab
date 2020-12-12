@@ -1,8 +1,10 @@
 language: python
 python:
 - 3.7.9
+
 os: linux
 dist: xenial
+
 jobs:
   include:
   - stage: Testes
@@ -16,11 +18,24 @@ jobs:
   - script:
     - sonar-scanner || travis_terminate 1;
     name: Testes de Qualidade e Seguranca
+
     addons:
       sonarcloud:
         organization: mathcardoso1997
         token: "${SONAR_TOKEN}"
-  - stage: Deploy
+      
+  - stage: Deploy STG
+    script: skip
+    deploy:
+      provider: heroku
+      strategy: api
+      api_key: "$HEROKU_API_KEY"
+      edge: true
+      app: devopslab-matheus-stg
+      on:
+        branch: main
+
+  - stage: Deploy PROD
     script: skip
     deploy:
       provider: heroku
@@ -30,6 +45,7 @@ jobs:
       app: devopslab-matheus
       on:
         branch: main
+
 notifications:
   slack:
     secure: mU071JnJWVH8lna7lZ7axzyWrVl8aNiQqT3q/JJvBxmTzRad5f+6jfPnQfOYSmQ08hZRRh+C2QfyYjC4UWBfk89t6Txly3N6KGbPuUvjJJT2kzkDZhhPipUrUct0blmIjpB2WrEz/q3Rvw69A1tiCWXi/s/j4uAZtDg0Uk6aDiMEJNfXZuPpa7/cWC/KDFpM87Gpf/G6CVYQxAF6oN1VADRj3VNElW5ciZMxB4eeFweVo/J5rfZjblG+KZPequ53DyT8V2TzrEH8+oZcJcfZRjD/wntPVoRrg+aWnG4OsYMNvk7gcFcQ6Vs3kPUuoDGehcc0ARwUOrQw6DQFULivHO/2NWHmI7OriACqE5suaEwL7RLBGJ5kfZ9O2eneiUi18n2BeuBDsJWIxpr+dzKpRVf/y/cdUu4f03kORA9va+kReFX7zgLL6PWMAkllNYsXumUivmkBGIe33cl1+57ulh/NDLmZIGT9XrxOp9ffo8t6Bi1tGjJU3b0TfP4Nja7/BCSR2rNtqYI43hH+KCGmG1ASgcK/HAx2Lj97N87a9wmST+3erNsxV2OBEy7mdNjWK7MskfnWrtQNB84s34Z29r/hNw8UmuqA7H54KIW5FFRyqL2OE4qTMaB0CxCj1orDg+4bS7cKESi1YRoVfBOoElBGWJvQKi2nv8vO9XocVu8=
