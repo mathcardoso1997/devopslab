@@ -42,7 +42,7 @@ jobs:
           branch: main
 
 notifications:
-    slack: matheuscardoso:G56O2J7QMDApmFsHTyQcvyb7
+    slack:
         rooms:
             - matheuscardoso:G56O2J7QMDApmFsHTyQcvyb7#devops-tools
     on_success: always
