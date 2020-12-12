@@ -44,6 +44,6 @@ jobs:
 notifications:
     slack: matheuscardoso:G56O2J7QMDApmFsHTyQcvyb7
         rooms:
-            - matheuscardoso:G56O2J7QMDApmFsHTyQcvyb7#
+            - matheuscardoso:G56O2J7QMDApmFsHTyQcvyb7#devops-tools
     on_success: always
     on_failure: always
